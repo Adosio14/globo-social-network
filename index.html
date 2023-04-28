@@ -1,36 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/styles.css">
-    <title>Jane Doe </title>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>Jane Doe</title>
+  </head>
+  <body>
     <div class="container text-center">
-        <div id="nav">
-            <div class="row" id="nav">
-                <div class="col-3">
-                    <img src="https://i.imgur.com/Qx8uR89.png" alt="GloboLogo"  class="globoLogo">
-                </div>
-                <div class="col-6"></div>
-                <div class="col-3">
-                    <input type="text" id="seachUserInput" placeholder="Ingresá tu usuario...">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            1 of 3
+      <div id="nav">
+        <div class="row" id="nav">
+          <div class="col-3">
+            <img
+              src="https://i.imgur.com/Qx8uR89.png"
+              alt="GloboLogo"
+              class="globoLogo"
+            />
           </div>
-          <div class="col">
-            2 of 3
-          </div>
-          <div class="col">
-            3 of 3
+          <div class="col-6"></div>
+          <div class="col-3">
+            <input
+              type="text"
+              id="seachUserInput"
+              placeholder="Ingresá tu usuario..."
+            />
           </div>
         </div>
       </div>
-</body>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="container text-center" id="profileCard">
+      <div class="row">
+        <div class="col-2">
+          <img
+            src="https://i.imgur.com/99qgQJy.jpeg"
+            alt="janePhoto"
+            id="userPicture"
+            width="200"
+            height="200"
+          />
+        </div>
+        <div class="col-5" id="userInfo">
+          <h1>Jane Doe</h1>
+          <p><strong>Email:</strong> janedoe@email.com</p>
+          <p><strong>Fecha de nacimiento:</strong> 01/05/1996</p>
+          <p><strong>Teléfono:</strong> 918-936-9585</p>
+          <p><strong>Ciudad:</strong> Tokyo, Japón</p>
+          <p>Trabajando en <strong>Lawn N</strong></p>
+        </div>
+        <div class="col-5" id="followButtonCol">
+          <button class="followButton">Seguir</button>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="container text-center" id="feedCards">
+      <div class="row">
+        <div class="col-8" id="profileCard">
+          <p class="dateText">Publicado hace 1 semana</p>
+          <img
+            src="https://i.imgur.com/bq9db41.jpeg"
+            alt="tokyoPhoto"
+            id="postPhoto"
+            height="500"
+          />
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3" id="aboutMeCard">
+          <h3>Sobre mí</h3>
+          <p>
+            Hola a todos! Soy Jane, y actualmente vivo en la vibrante y
+            emocionante ciudad de Tokyo, Japon. Me encanta capturar a esencia de
+            la vida urbana a través de mi lente, explorando el contraste entre
+            la arquitectura moderna y las tradiciones centenarias que conviven
+            en esta metropolis unica. Desde rascacielos deslumbrantes y calles
+            bulliciosas hasta templos serenos y jardines tranquilos, encuentro
+            inspiración en cada rincón de ésta increíble ciudad.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

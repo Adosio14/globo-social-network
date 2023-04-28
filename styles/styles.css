@@ -1,31 +1,77 @@
-#nav{
-    background-color: #3b82f6;
-    padding-top: 0px;
-    border-radius: 50;
+body {
+  background-color: #f4f4f5;
 }
-.globoLogo{
-    padding-left: 24px;
+#nav {
+  background-color: #3b82f6;
+  padding-top: 0px;
+  border-radius: 50;
 }
-.profileHeader{
-    border-radius: 12px;
-    background-color: red;
+.globoLogo {
+  padding-left: 24px;
 }
-#seachUserInput{
-    
-    border: none;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    border-color: #3b82f6;
-    background-color: #dbeafe;
-    color: black;
+.profileHeader {
+  border-radius: 12px;
+  background-color: red;
 }
-::placeholder{
-    color: #3b82f6;
+#seachUserInput {
+  border: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border-color: #3b82f6;
+  background-color: #dbeafe;
+  color: black;
 }
-.col-3{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+::placeholder {
+  color: #3b82f6;
+}
+#userPicture {
+  padding: 4px;
+  border: solid;
+  border-color: #3b82f6;
+  border-radius: 50%;
+}
+#profileCard {
+  padding: 24px;
+  text-align: start;
+  background-color: white;
+  border-radius: 8px;
+}
+.col-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#followButtonCol {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+#userInfo {
+  text-align: start;
+}
+#aboutMeCard {
+  color: #8a8a91;
+  padding: 12px;
+  text-align: start;
+  background-color: white;
+  border-radius: 8px;
+  height: 350px;
+}
+
+.dateText {
+  color: lightgray;
+}
+#postPhoto {
+  border-radius: 12px;
+}
+.followButton {
+  text-align: center;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px;
+  width: 80px;
 }
