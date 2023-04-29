@@ -75,3 +75,46 @@ body {
   padding: 6px;
   width: 80px;
 }
+.Button{
+  text-align: center;
+  background-color: #f4f4f5;
+  color: #3b82f6;
+  border-radius: 8px;
+  border: none;
+  padding: 6px;
+
+}
+.Azul{
+  color: #3b82f6;
+}
+.Button2{
+  text-align: center;
+  background-color: #f4f4f5;
+  color: red;
+  border-radius: 8px;
+  border: none;
+  padding: 6px;
+}
+#DejaTucomentario{
+  border: none;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border-color: #f4f4f5;
+  background-color: #f4f4f5;
+  color: black;
+  width: 500px;
+  margin-right: 20px;
+  padding: 8px;
+  
+}
+.ButtonComentar{
+  text-align: center;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px;
+  width: 80px;
+}
