@@ -157,6 +157,6 @@ body {
   padding: 6px;
   width: 80px;
 }
-#errorText {
+.errorText {
   color: red;
 }

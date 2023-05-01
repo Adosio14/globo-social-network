@@ -55,6 +55,7 @@
           <p>Trabajando en <strong>Lawn N</strong></p>
         </div>
         <div class="col-xl-5 col-lg-5 col-md-3 col-12" id="followButtonCol">
+          <strong class="errorText" id="followErrorText"></strong>
           <button id="followButton">Seguir</button>
         </div>
       </div>
@@ -73,6 +74,7 @@
           />
           <div id="likes">
             <button id="likeButton">Me gusta</button>
+            <strong class="errorText" id="likeErrorText"></strong>
             <p><strong id="likeCount"></strong> Likes</p>
           </div>
           <h5>Comentarios</h5>
@@ -91,7 +93,7 @@
             </p>
           </div>
           <div>
-            <strong id="errorText"></strong>
+            <strong class="errorText" id="commentsErrorText"></strong>
           </div>
           <div id="commentsInputSection">
             <input
