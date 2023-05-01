@@ -1,5 +1,5 @@
 # globo-social-network
-## Trabajo práctico N3- Carreras, Dosio Farina
+## Trabajo práctico N3- Carreras, Dosio, Farina
 
 ![Imagen simpsons](https://tn.comb.io/iLFamLwc/402c.jpg "simpsons")
 
