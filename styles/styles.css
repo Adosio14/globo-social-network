@@ -59,6 +59,15 @@ body {
   text-align: start;
   background-color: white;
   border-radius: 8px;
+  margin-top: 24px;
+}
+#commentsCard {
+  justify-items: start;
+  padding: 24px;
+  text-align: start;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 24px;
 }
 
 .col-3 {
@@ -97,7 +106,10 @@ body {
   width: 100%;
   height: auto;
   max-width: 1000px;
-  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+#feedCards{
+  margin-top: 24px;
 }
 #followButton {
   text-align: center;

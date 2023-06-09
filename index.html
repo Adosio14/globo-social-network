@@ -10,116 +10,87 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles/styles.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Jane Doe</title>
-    <script src="index.js" defer></script>
+    <script src="js/app.js" defer></script>
+    <!-- <script src="index.js" defer></script> -->
   </head>
-
+  <!-- <nav class="navbar navbar-light p-2" style="background-color: #3b82f6">
+    <span class="navbar-brand"
+      ><img src="https://i.imgur.com/Qx8uR89.png" alt="GloboLogo" style="margin-left: 24px"
+    /></span>
+    <span class="form-inline my-2 my-lg-0"
+      ><input
+        id="userNameInput"
+        style="margin-right: 24px"
+        type="text"
+        placeholder="Ingresá tu usuario"
+    /></span>
+  </nav> -->
   <body>
-    <div class="container-fluid text-center">
-      <div class="row" id="nav">
-        <div class="col-3">
-          <img
-            src="https://i.imgur.com/Qx8uR89.png"
-            alt="GloboLogo"
-            class="globoLogo"
-          />
-        </div>
-        <div class="col-6"></div>
-        <div class="col-3">
-          <input
-            type="text"
-            id="seachUserInput"
-            placeholder="Ingresá tu usuario..."
-          />
-        </div>
-      </div>
-    </div>
-    <br />
-    <br />
-    <div class="container text-center" id="profileCard">
-      <div class="row mb-3">
-        <div class="col-xl-3 col-lg-3 col-md-6 col-12 ali">
-          <img
+    <div id="app">
+      <nav-bar @username-changed="handleUsernameChange"></nav-bar>  
+      <div class="container text-center" id="profileCard">
+        <div class="row mb-3">
+        <div class="col-xl-3 col-lg-3 col-md-6 col-12 d-flex align-items-center justify-content-center">
+            <img
             src="https://i.imgur.com/99qgQJy.jpeg"
             alt="janePhoto"
             id="userPicture"
             height="200"
-          />
+            />
         </div>
         <div class="col-xl-4 col-lg-4 col-md-3 col-12" id="userInfo">
-          <h1>Jane Doe</h1>
-          <p><strong>Email:</strong> janedoe@email.com</p>
-          <p><strong>Fecha de nacimiento:</strong> 01/05/1996</p>
-          <p><strong>Teléfono:</strong> 918-936-9585</p>
-          <p><strong>Ciudad:</strong> Tokyo, Japón</p>
-          <p>Trabajando en <strong>Lawn N</strong></p>
+            <h1>Jane Doe</h1>
+            <p><strong>Email:</strong> janedoe@gmail.com </p>
+            <p><strong>Fecha de nacimiento:</strong> 01/05/1996</p>
+            <p><strong>Teléfono:</strong> 918-936-9585</p>
+            <p><strong>Ciudad:</strong> Tokyo, Japón</p>
+            <p>Trabajando en <strong>Lawn N</strong></p>
         </div>
-        <div class="col-xl-5 col-lg-5 col-md-3 col-12" id="followButtonCol">
-          <strong class="errorText" id="followErrorText"></strong>
-          <button id="followButton">Seguir</button>
+        <div class="col-xl-5 col-lg-5 col-md-3 col-12 d-flex align-items-end justify-content-end flex-column" id="followButtonCol">
+            <strong v-if="followError" class="errorText">No puedes seguir sin ingresar tu nombre de usuario</strong>
+            <button @click="follow" id="followButton">{{ followed ? "Dejar de seguir" : "Seguir" }}</button>
         </div>
-      </div>
+        </div>
     </div>
-    <br />
-    <br />
-    <div class="container text-center" id="feedCards">
-      <div class="row">
-        <div class="col-lg-8 col-sm-12" id="profileCard">
-          <p class="dateText">Publicado hace 1 semana</p>
-          <img
-            src="https://i.imgur.com/bq9db41.jpeg"
-            alt="tokyoPhoto"
-            id="postPhoto"
-            height="500"
-          />
-          <div id="likes">
-            <button id="likeButton">Me gusta</button>
-            <strong class="errorText" id="likeErrorText"></strong>
-            <p><strong id="likeCount"></strong> Likes</p>
-          </div>
-          <h5>Comentarios</h5>
-          <div id="comentarios">
-            <p>
-              <strong>Juan Perez </strong> ¡Wow, esta foto de Tokyo es
-              impresionante! 🌆✨
-            </p>
-            <p>
-              <strong>Kathleen J Rennie </strong> ¡Esta foto de Tokyo es
-              simplemente espectacular! Metrae tantos recuerdos
-            </p>
-            <p>
-              <strong>Diana Bell </strong>¡Espero que algun dia pueda ver Tokyo
-              en persona!
-            </p>
-          </div>
-          <div>
-            <strong class="errorText" id="commentsErrorText"></strong>
-          </div>
-          <div id="commentsInputSection">
-            <input
-              type="text"
-              id="DejaTucomentario"
-              placeholder="Deja tu comentario..."
+      <div class="container text-center" id="feedCards">
+        <div class="row">
+          <div class="col-lg-8 col-sm-12" id="commentsCard">
+            <p class="dateText">Publicado hace 1 semana</p>
+            <img
+              src="https://i.imgur.com/bq9db41.jpeg"
+              alt="tokyoPhoto"
+              id="postPhoto"
+              height="500"
             />
-            <button class="ButtonComentar" id="commentButton">Comentar</button>
+            <div id="likes">
+              <button @click="like" id="likeButton">{{liked ? "Ya no me gusta" : "Me gusta"}}</button>
+              <strong v-if="likeError" class="errorText" id="likeErrorText">No puedes dar "me gusta" sin ingresar tu nombre de usuario</strong>
+              <p><strong id="likeCount">{{ likeCount }}</strong> Likes</p>
+            </div>
+            <h5>Comentarios</h5>
+            <div v-for="comment in comments" :key="comment.userName" id="comentarios">
+              <strong>{{ comment.userName }}</strong>
+              <p>{{ comment.content }}</p>
+            </div>
+            <div>
+              <strong v-if="commentError" class="errorText" id="commentsErrorText">{{ emptyComment ? "El comentario no puede estar vacío": "No puedes comentar sin ingresar tu nombre de usuario"}}</strong>
+            </div>
+            <div id="commentsInputSection">
+              <input
+                v-model="commentInput"
+                type="text"
+                id="DejaTucomentario"
+                placeholder="Deja tu comentario..."
+              />
+              <button @click="comment" class="ButtonComentar" id="commentButton">Comentar</button>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-1"></div>
-        <br />
-        <br />
-        <div class="col-lg-3 col-sm-12 col-md-12" id="aboutMeCard">
-          <h3>Sobre mí</h3>
-          <p>
-            Hola a todos! Soy Jane, y actualmente vivo en la vibrante y
-            emocionante ciudad de Tokyo, Japon. Me encanta capturar a esencia de
-            la vida urbana a través de mi lente, explorando el contraste entre
-            la arquitectura moderna y las tradiciones centenarias que conviven
-            en esta metropolis unica. Desde rascacielos deslumbrantes y calles
-            bulliciosas hasta templos serenos y jardines tranquilos, encuentro
-            inspiración en cada rincón de ésta increíble ciudad.
-          </p>
+          <div class="col-lg-1"></div>
+          <about-me></about-me>
         </div>
       </div>
+    </body>
     </div>
-  </body>
 </html>
