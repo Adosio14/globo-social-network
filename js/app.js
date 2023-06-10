@@ -85,7 +85,7 @@ app.component("nav-bar", {
           <img src="https://i.imgur.com/Qx8uR89.png" alt="GloboLogo" style="margin-left: 24px">
         </span>
         <span class="form-inline my-2 my-lg-0">
-          <input v-model="userName" id="userNameInput" style="margin-right: 24px" type="text" placeholder="Ingresá tu usuario">
+          <input v-model="userName" style="margin-right: 24px" type="text" placeholder="Ingresá tu usuario">
         </span>
       </nav>
     `,
@@ -99,7 +99,7 @@ app.component("nav-bar", {
             this.$emit("username-changed", newValue)
             console.log
         }
-    }
+    },
 })
   
 app.component("about-me",{

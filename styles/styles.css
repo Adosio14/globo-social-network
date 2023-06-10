@@ -18,8 +18,7 @@ body {
   border-radius: 12px;
   background-color: red;
 }
-
-#seachUserInput {
+input {
   border: none;
   text-align: center;
   justify-content: center;
@@ -29,7 +28,6 @@ body {
   background-color: #dbeafe;
   color: black;
 }
-
 ::placeholder {
   color: #3b82f6;
 }
