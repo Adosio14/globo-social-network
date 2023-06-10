@@ -57,23 +57,23 @@ const app = Vue.createApp({
             }
         },
         comment(){
-            if(this.commentInput == undefined || this.commentInput == ""){
+            if(this.userInput == "" || this.userInput == undefined){
+                this.commentError = true
+            }else if(this.commentInput == undefined){
                 this.emptyComment = true
                 this.commentError=true
-            }else if(this.userInput == ""){
-                this.commentError = true
-                this.emptyComment = false
-
+            }else if(this.commentInput == "" || this.commentInput.trim() == ""){
+                this.emptyComment = true
+                this.commentError=true
             }else{
-                console.log(this.commentInput)
                 this.commentError = false
                 this.emptyComment = false
-                    let comment = {
-                        "userName" : this.userInput,
-                        "content" : this.commentInput
-                    }
-                    this.comments.push(comment)
-                    this.commentInput = ""
+                let comment = {
+                    "userName" : this.userInput,
+                    "content" : this.commentInput
+                }
+                this.comments.push(comment)
+                this.commentInput = ""
             }
         }
     }
